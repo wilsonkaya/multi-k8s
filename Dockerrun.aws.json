@@ -1,0 +1,38 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "image": "fatihkaya2/multi-client",
+            "hostname": "client",
+            "essential": false
+        },
+        {
+            "name": "server",
+            "image": "fatihkaya2/multi-server",
+            "hostname": "api",
+            "essential": false
+        },
+        {
+            "name" : "worker",
+            "image": "fatihkaya2/multi-worker",
+            "hostname": "worker",
+            "essential": false
+        },
+        {
+            "name": "nginx",
+            "image": "fatihkaya2/multi-nginx",
+            "hostname": "nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                } 
+            ],
+            "links": ["links", "clients"]
+        }
+
+    ]
+
+}
