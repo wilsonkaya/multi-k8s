@@ -7,7 +7,7 @@ docker push fatihkaya2/multi-worker:latest
 
 docker push fatihkaya2/multi-client:$SHA
 docker push fatihkaya2/multi-server:$SHA
-docker push fatihkaya2/worker:$SHA
+docker push fatihkaya2/multi-worker:$SHA
 
 kubectl apply -f k8s 
 kubectl set image deployments/server-deployment server=fatihkaya2/multi-server:$SHA 
