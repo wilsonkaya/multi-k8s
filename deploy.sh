@@ -3,7 +3,7 @@ docker build -t fatihkaya2/multi-server:latest -t fatihkaya2/multi-server:$SHA -
 docker build -t fatihkaya2/multi-worker:latest -t fatihkaya2/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 docker push fatihkaya2/multi-client:latest
 docker push fatihkaya2/multi-server:latest
-docker push fatihkaya2/worker:latest
+docker push fatihkaya2/multi-worker:latest
 
 docker push fatihkaya2/multi-client:$SHA
 docker push fatihkaya2/multi-server:$SHA
